@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LKPD Fase 1 - Manajemen VPS AWS</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #5f88ca;
+        color: #243247;
+        line-height: 1.7;
+      }
+
+      header {
+        background: linear-gradient(120deg, #12233a, #1e4777);
+        color: white;
+        padding: 40px 20px;
+      }
+
+      .header-inner,
+      main {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      header h1 {
+        font-size: 30px;
+        margin: 8px 0;
+      }
+
+      header p {
+        color: #dbeafe;
+      }
+
+      main {
+        padding: 25px 16px;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .primary {
+        background: #2563eb;
+        color: white;
+      }
+
+      .secondary {
+        background: white;
+        color: #14243a;
+        border: 1px solid #ddd;
+      }
+
+      .identity,
+      .phase {
+        background: white;
+        border: 1px solid #dbe3ee;
+        border-radius: 14px;
+        padding: 25px;
+        margin-bottom: 20px;
+      }
+
+      .identity-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #cbd5e1;
+        border-radius: 9px;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+      }
+
+      input[readonly],
+      textarea[readonly] {
+        background: #f8fafc;
+        color: #243247;
+        cursor: default;
+      }
+
+      textarea {
+        min-height: 190px;
+        resize: vertical;
+        line-height: 1.8;
+      }
+
+      .phase-title {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin-bottom: 15px;
+      }
+
+      .phase-num {
+        background: #fff4db;
+        color: #a16207;
+        padding: 9px 15px;
+        border-radius: 9px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 21px;
+        margin: 0;
+      }
+
+      .field {
+        margin: 18px 0;
+      }
+
+      .note {
+        background: #fff8e8;
+        border-left: 4px solid #f59e0b;
+        padding: 18px;
+        border-radius: 9px;
+        margin-top: 22px;
+      }
+
+      .footer {
+        text-align: center;
+        color: #64748b;
+        margin: 30px 0;
+      }
+
+      @media (max-width: 650px) {
+        .identity-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .phase {
+          padding: 17px;
+        }
+
+        .phase-title {
+          align-items: flex-start;
+        }
+      }
+
+      @media print {
+        .toolbar {
+          display: none;
+        }
+
+        body {
+          background: white;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <h1>LKPD Manajemen Server VPS AWS</h1>
+        <p>Modul Praktik AWS Cloud - Fase 1</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="toolbar">
+        <button class="secondary" onclick="window.print()">Cetak / Simpan PDF</button>
+
+        <button class="primary" onclick="saveAnswers()">Simpan Jawaban</button>
+      </div>
+
+      <!-- IDENTITAS SUDAH DIISI -->
+
+      <section class="identity">
+        <h2>Identitas Peserta Didik</h2>
+
+        <br />
+
+        <div class="identity-grid">
+          <div>
+            <label>Nama</label>
+            <input type="text" value="Muhammad Adzkha Sopian" readonly />
+          </div>
+
+          <div>
+            <label>Kelas</label>
+            <input type="text" value="XI RPL 1" readonly />
+          </div>
+
+          <div>
+            <label>Tanggal</label>
+            <input type="text" value="19-11-2026" readonly />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Instruktur</label>
+          <input type="text" value="Pak Asep Ulumudin" readonly />
+        </div>
+      </section>
+
+      <!-- FASE 1 -->
+
+      <section class="phase">
+        <div class="phase-title">
+          <span class="phase-num">01</span>
+          <h2>Fase 1: Pengenalan Konsep VPS & Cloud</h2>
+        </div>
+
+        <p>Penjelasan mengenai perbedaan layanan hosting dan server cloud.</p>
+
+        <div class="field">
+          <label>1. Shared Hosting</label>
+
+          <textarea readonly>
+Shared Hosting adalah layanan hosting yang menggunakan satu server secara bersama-sama oleh banyak pengguna atau website. Semua pengguna berbagi sumber daya server seperti CPU, RAM, dan penyimpanan. Layanan ini cocok untuk website kecil karena harganya lebih murah dan mudah digunakan.</textarea
+          >
+        </div>
+
+        <div class="field">
+          <label>2. Dedicated Server</label>
+
+          <textarea readonly>
+Dedicated Server adalah layanan server yang seluruh sumber dayanya digunakan secara khusus oleh satu pengguna. Pengguna memiliki kontrol lebih besar terhadap konfigurasi server, keamanan, dan performanya. Layanan ini cocok untuk website atau aplikasi dengan kebutuhan tinggi.</textarea
+          >
+        </div>
+
+        <div class="field">
+          <label>3. Amazon Lightsail</label>
+
+          <textarea readonly>
+Amazon Lightsail adalah layanan VPS dari Amazon Web Services (AWS) yang menyediakan server virtual dengan konfigurasi sederhana dan harga yang mudah dipahami. Layanan ini cocok untuk pemula yang ingin membuat dan mengelola website atau aplikasi.</textarea
+          >
+        </div>
+
+        <div class="field">
+          <label>4. Amazon EC2</label>
+
+          <textarea readonly>
+Amazon EC2 (Elastic Compute Cloud) adalah layanan komputasi cloud dari AWS yang menyediakan server virtual. Pengguna dapat mengatur sistem operasi, kapasitas CPU, RAM, penyimpanan, dan jaringan sesuai kebutuhan.</textarea
+          >
+        </div>
+
+        <div class="note">
+          <strong>Kesimpulan Fase 1</strong>
+
+          <p>
+            Shared Hosting digunakan bersama oleh banyak pengguna, Dedicated Server menyediakan server khusus untuk satu pengguna, Amazon Lightsail menawarkan VPS yang sederhana, sedangkan Amazon EC2 memberikan fleksibilitas dalam mengelola
+            server virtual berbasis cloud.
+          </p>
+        </div>
+      </section>
+
+      <div class="footer">
+        LKPD Manajemen Server VPS AWS
+        <br />
+        Modul Praktik AWS Cloud - Fase 1
+        <br />
+        Dibuat oleh Muhammad Adzkha Sopian - XI RPL 1
+      </div>
+    </main>
+
+    <script>
+      function saveAnswers() {
+        const data = {
+          nama: "Muhammad Adzkha Sopian",
+          kelas: "XI RPL 1",
+          tanggal: "19-11-2026",
+          instruktur: "Pak Asep Ulumudin",
+        };
+
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "LKPD-Fase-1-Muhammad-Adzkha-Sopian.json";
+        link.click();
+
+        URL.revokeObjectURL(link.href);
+      }
+    </script>
+  </body>
+</html>
